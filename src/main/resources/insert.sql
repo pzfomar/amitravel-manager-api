@@ -1,0 +1,9 @@
+ALTER TABLE USUARIOS ADD FULLTEXT(apodo, rol);
+ALTER TABLE PROMOCIONES ADD FULLTEXT(nombre, descripcion);
+ALTER TABLE PRODUCTOS ADD FULLTEXT(nombre, tipo, descripcion);
+ALTER TABLE PERSONAS ADD FULLTEXT(nombre, apellido_paterno, apellido_materno, telefono);
+ALTER TABLE NOTIFICACIONES ADD FULLTEXT(nombre, descripcion, tipo);
+ALTER TABLE NEGOCIOS ADD FULLTEXT(nombre);
+ALTER TABLE EVENTOS ADD FULLTEXT(nombre, descripcion, tipo, lugar);
+ALTER TABLE CALIFICACIONES ADD FULLTEXT(comentario);
+ALTER TABLE ANUNCIOS ADD FULLTEXT(nombre, descripcion, url);

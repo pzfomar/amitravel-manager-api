@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    url: jdbc:mysql://sql.soyfedo.com:3306/AMITRAVEL?serverTimezone=America/Mexico_City&useSSL=false
+    username: backend
+    password: KtjX15BK&KF!BCtoxzuP
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-timeout: 20000
+      minimum-idle: 0
+      maximum-pool-size: 3
+      idle-timeout: 10000
+      max-lifetime: 30000
+      auto-commit: true
+      pool-name: UsersPool
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        #dialect: org.hibernate.dialect.MySQL5Dialect
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        format_sql: true
+        default_schema: "AMITRAVEL"
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+logging:
+  pattern:
+    console: "%d %p - [%F:%L] - %m%n"
+  level:
+    root: INFO
+server:
+  port: 8082

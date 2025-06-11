@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    url: jdbc:sqlite:AMITRAVEL.db
+    username: root
+    password:
+    driver-class-name: org.sqlite.JDBC
+    hikari:
+      connection-timeout: 20000
+      minimum-idle: 0
+      maximum-pool-size: 3
+      idle-timeout: 10000
+      max-lifetime: 30000
+      auto-commit: true
+      pool-name: UsersPool
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.sqlite.hibernate.dialect.SQLiteDialect
+        format_sql: true
+        default_schema: "AMITRAVEL"
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+logging:
+  pattern:
+    console: "%d %p - [%F:%L] - %m%n"
+  level:
+    root: INFO
+server:
+  port: 8081
